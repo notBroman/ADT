@@ -16,23 +16,32 @@ class Binary_Tree():
     def __init__(self, new_val):
         self._root = _TreeNode(new_val)
 
-    def preorder_trav(self, start:_TreeNode, trav:str):
+    def preorder_trav(self, start:_TreeNode, travd:str):
         """traverses root->left->right"""
         if start:
-            trav += str(start.data) + '->'
-            preorder_trav(self, start.left_child, trav)
-            preorder_trav(self, start.right_child, trav)
-        return trav
+            travd += str(start.data) + '->'
+            preorder_trav(self, start.left_child, travd)
+            preorder_trav(self, start.right_child, travd)
+        else:
+            return travd
 
-    def inorder_trav(self, start:_TreeNode, trav:str):
+    def inorder_trav(self, start:_TreeNode, travd:str):
         """traverses left->root->right"""
         if start:
-            inorder_trav(self, start.left_child, trav)
-            trav += str(start.data) + '->'
-            inorder_trav(self, start.right_child, trav)
+            inorder_trav(self, start.left_child, travd)
+            travd += str(start.data) + '->'
+            inorder_trav(self, start.right_child, travd)
+        else:
+            return travd
 
-    def postorder_trav(self, start:_TreeNode, trav:str):
+    def postorder_trav(self, start:_TreeNode, travd:str):
         """traverses left->right->root"""
+        if start:
+            postorder_trav(self, start.left_child, travd)
+            postorder_trav(self, start.right_child, travd)
+            travd += str(start.data) + '->'
+        else:
+            return travd
 
     def get_root(self):
         return self._root
