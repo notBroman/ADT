@@ -1,4 +1,4 @@
 # ADT
-repo for implemented ADTs
+repo for ADTs
 
 No garuantee that any of this works
