@@ -1,10 +1,10 @@
-from linked_list import Singly_Linked_List as ll
+from ADT import linked_list as ll
 
 """Stack Implementation using a singly linked list"""
 
 class Stack():
     def __init__(self):
-        self._data = ll()
+        self._data = ll.Singly_Linked_List()
         self._bot = self._data._tail
         self._top = self._data._head
         self._size = 0

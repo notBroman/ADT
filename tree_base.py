@@ -12,54 +12,54 @@ class _TreeNode():
     def __str__(self):
         return str(self._data)
 
-    def __del__(self):
-        """ DO NOT USE INCOMPLETE/INCORRECT CODE """
-        if self.is_root():
+    # def __del__(self):
+       # """ DO NOT USE INCOMPLETE/INCORRECT CODE """
+       # if self.is_root():
             # mistake in structruing need to check for children always
             # dont check for parent if node is root
-            pass
-        else:
-            """ Node has right and left child """
-            if self.left_child is not None and self.right_child is not None:
-                if self is self.parent.left_child:
+            # pass
+        # else:
+            # """ Node has right and left child """
+            # if self.left_child is not None and self.right_child is not None:
+                # if self is self.parent.left_child:
+                   # implement logic to replace self correctly
+                # elif self is self.parent.right_child:
                     # implement logic to replace self correctly
-                elif self is self.parent.right_child:
-                    # implement logic to replace self correctly
 
-            """ Node only has left child """
-            elif self.left_child is not None and self.right_child is None:
+            # """ Node only has left child """
+            # elif self.left_child is not None and self.right_child is None:
                 # node is parents left child
-                if self is self.parent.left_child:
-                    self.left_child.parent = self.parent
-                    self.parent.left_child = self.left_child
+                # if self is self.parent.left_child:
+                    # self.left_child.parent = self.parent
+                   # self.parent.left_child = self.left_child
                 # node is parents right child
-                elif self is self.parent.right_child:
-                    self.left_child.parent = self.parent
-                    self.parent.right_child = self.left_child
+                # elif self is self.parent.right_child:
+                   # self.left_child.parent = self.parent
+                   # self.parent.right_child = self.left_child
                 # in case something goes wrong
-                else:
-                    print("case not accounted for")
-                    break
+                # else:
+                    # print("case not accounted for")
+                    # break
 
-            """ Node only has right child """
-            elif self.left_child is None and self.right_child is not None:
+            # """ Node only has right child """
+            # elif self.left_child is None and self.right_child is not None:
                 # node is parents left child
-                if self is self.parent.left_child:
-                    self.right_child.parent = self.parent
-                    self.parent.left_child = self.right_child
+                # if self is self.parent.left_child:
+                    # self.right_child.parent = self.parent
+                    # self.parent.left_child = self.right_child
                 # node is parents right child
-                elif self is self.parent.right_child:
-                    self.right_child.parent = self.parent
-                    self.parent.right_child = self.right_child
+                # elif self is self.parent.right_child:
+                    # self.right_child.parent = self.parent
+                    # self.parent.right_child = self.right_child
                 # in case something goes wrong
-                else:
-                    print("case not accounted for")
-                    break
+                # else:
+                    # print("case not accounted for")
+                    # break
 
-        self.data = None
-        self.parent = None
-        self.left_child = None
-        self.right_child = None
+        # self.data = None
+        # self.parent = None
+        # self.left_child = None
+        # self.right_child = None
 
 class Binary_Tree():
     def __init__(self, new_val):
